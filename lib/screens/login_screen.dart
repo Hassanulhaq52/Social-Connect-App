@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task/utils/contants.dart';
+import 'package:task/utils/styles.dart';
 
 import '../bloc/login_bloc/login_bloc.dart';
 import 'home_screen.dart';
@@ -46,52 +47,29 @@ class _LogInScreenState extends State<LogInScreen> {
                         'images/home.png',
                         height: 150,
                         width: 150,
-                        // color: Colors.lightBlueAccent,
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       const Text(
                         'Lorem',
                         style: TextStyle(
-                          fontSize: 24, // Set your desired font size
-                          fontWeight:
-                              FontWeight.bold, // Set your desired font weight
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       const Text(
                         'IPSUM',
                         style: TextStyle(
-                          fontSize: 18, // Set your desired font size
-                          color: Colors.grey, // Set your desired text color
+                          fontSize: 18,
+                          color: Colors.grey,
                         ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 20),
                   Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey.shade300,
-                    ),
+                    decoration: Styles.containerDecoration,
                     child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Email',
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 20.0),
-                        border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.grey.shade300, width: 1.0),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.grey.shade300, width: 2.0),
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                      ),
+                      decoration: Styles.emailField,
                       onChanged: (email) {
                         context
                             .read<LoginBloc>()
@@ -103,13 +81,10 @@ class _LogInScreenState extends State<LogInScreen> {
                     height: 20,
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey.shade300,
-                    ),
+                    decoration: Styles.containerDecoration,
                     child: TextField(
                       obscureText: isVisible,
-                      decoration: InputDecoration(
+                      decoration: Styles.passwordField.copyWith(
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -123,23 +98,6 @@ class _LogInScreenState extends State<LogInScreen> {
                           icon: isVisible
                               ? const Icon(Icons.visibility_off)
                               : const Icon(Icons.visibility),
-                        ),
-                        hintText: 'Password',
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 20.0),
-                        border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.grey.shade300, width: 1.0),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10.0)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.grey.shade300, width: 2.0),
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         ),
                       ),
                       onChanged: (password) {
@@ -161,8 +119,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      fixedSize: const Size(double.infinity,
-                          45.0), // Set the desired width and height
+                      fixedSize: const Size(double.infinity, 45.0),
                     ),
                     child: const Text('LOGIN',
                         style: TextStyle(color: Colors.white)),

@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -28,8 +28,6 @@ class ProfileScreen extends StatelessWidget {
     return "${address.street}, ${address.suite}, ${address.city}";
   }
 
-// ...
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginBloc, LoginState>(
@@ -38,21 +36,20 @@ class ProfileScreen extends StatelessWidget {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   children: [
                     _buildProfileInfo("Name", state.user!.name),
-                    Divider(color: Colors.black26),
+                    const Divider(color: Colors.black26),
                     _buildProfileInfo("Username", state.user!.username),
-                    Divider(color: Colors.black26),
+                    const Divider(color: Colors.black26),
                     _buildProfileInfo(
                         "Address", getAddressString(state.user!.address)),
-                    Divider(color: Colors.black26),
+                    const Divider(color: Colors.black26),
                     _buildProfileInfo("Zipcode", state.user!.address.zipcode),
-                    Divider(color: Colors.black26),
-                    // Add more profile information here with dividers
+                    const Divider(color: Colors.black26),
                   ],
                 ),
               ),

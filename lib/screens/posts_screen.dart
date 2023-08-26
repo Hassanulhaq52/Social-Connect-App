@@ -27,18 +27,22 @@ class PostScreen extends StatelessWidget {
                       children: [
                         ListTile(
                           title: Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0, top: 18),
+                            padding:
+                                const EdgeInsets.only(bottom: 8.0, top: 18),
                             child: Text(
                               post.title,
                               style: TextStyle(
-                                color: isOwn ? Color(int.parse(Constants.primaryColor)) : Colors.black,
-                                fontWeight: isOwn ? FontWeight.w600 : FontWeight.w400,
+                                color: isOwn
+                                    ? Color(int.parse(Constants.primaryColor))
+                                    : Colors.black,
+                                fontWeight:
+                                    isOwn ? FontWeight.w600 : FontWeight.w400,
                               ),
                             ),
                           ),
                           subtitle: Text(post.body),
                         ),
-                        const Divider(color: Colors.black26), // Add a Divider after each ListTile
+                        const Divider(color: Colors.black26),
                       ],
                     );
                   },
@@ -50,9 +54,7 @@ class PostScreen extends StatelessWidget {
             },
           ),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {
-
-            },
+            onPressed: () {},
             backgroundColor: Color(int.parse(Constants.primaryColor)),
             child: const Icon(Icons.add),
           ),
