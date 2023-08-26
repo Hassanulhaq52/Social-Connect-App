@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<LoginBloc>(
       create: (context) => LoginBloc(),
-      child:  MaterialApp(
+      child:  const MaterialApp(
         title: 'Task',
         home: SplashScreen(),
       ),

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    // Delay the navigation to the login screen
-    Future.delayed(Duration(seconds: 3), () {
+
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const LogInScreen()),
       );
@@ -22,7 +24,7 @@ class SplashScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                'images/home.png', // Replace with your actual image path
+                'images/home.png',
                 height: 200,
                 width: 200,
               ),
