@@ -48,18 +48,20 @@ class _LogInScreenState extends State<LogInScreen> {
                         height: 150,
                         width: 150,
                       ),
-                      const SizedBox(height: 20),
-                      const Text(
+                      const SizedBox(height: 10),
+                      Text(
                         'Lorem',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 44,
                           fontWeight: FontWeight.bold,
+                          color: Colors.grey.shade700,
                         ),
                       ),
                       const Text(
                         'IPSUM',
                         style: TextStyle(
-                          fontSize: 18,
+                          letterSpacing: 8,
+                          fontSize: 22,
                           color: Colors.grey,
                         ),
                       ),

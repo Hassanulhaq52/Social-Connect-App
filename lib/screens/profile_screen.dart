@@ -19,7 +19,12 @@ class ProfileScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(value),
+        Flexible(
+          child: Text(
+            value,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
       ],
     );
   }
